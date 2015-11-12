@@ -1,38 +1,29 @@
 package se.svt.sureshkumar.testapp.view;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
-
 import se.svt.sureshkumar.testapp.R;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 /**
- * An activity representing a list of RadioPrograms. This activity
- * has different presentations for handset and tablet-size devices. On
- * handsets, the activity presents a list of items, which when touched,
- * lead to a {@link RadioProgramDetailActivity} representing
- * item details. On tablets, the activity presents the list of items and
- * item details side-by-side using two vertical panes.
+ * An activity representing a list of RadioPrograms. This activity has different presentations for handset and tablet-size devices. On handsets, the activity presents a list of
+ * items, which when touched, lead to a {@link RadioProgramDetailActivity} representing item details. On tablets, the activity presents the list of items and item details
+ * side-by-side using two vertical panes.
  * <p/>
- * The activity makes heavy use of fragments. The list of items is a
- * {@link RadioProgramListFragment} and the item details
- * (if present) is a {@link RadioProgramDetailFragment}.
+ * The activity makes heavy use of fragments. The list of items is a {@link RadioProgramListFragment} and the item details (if present) is a {@link RadioProgramDetailFragment}.
  * <p/>
- * This activity also implements the required
- * {@link RadioProgramListFragment.Callbacks} interface
- * to listen for item selections.
+ * This activity also implements the required {@link RadioProgramListFragment.Callbacks} interface to listen for item selections.
  */
 public class RadioProgramListActivity extends AppCompatActivity
 		implements RadioProgramListFragment.Callbacks {
 
 	/**
-	 * Whether or not the activity is in two-pane mode, i.e. running on a tablet
-	 * device.
+	 * Whether or not the activity is in two-pane mode, i.e. running on a tablet device.
 	 */
 	private boolean mTwoPane;
 
@@ -56,7 +47,7 @@ public class RadioProgramListActivity extends AppCompatActivity
 
 		if (findViewById(R.id.radioprogram_detail_container) != null) {
 			// The detail container view will be present only in the
-			// large-screen layouts (res/values-large and
+			// large-screen layouts (res/values-xlarge and
 			// res/values-sw600dp). If this view is present, then the
 			// activity should be in two-pane mode.
 			mTwoPane = true;
@@ -72,8 +63,7 @@ public class RadioProgramListActivity extends AppCompatActivity
 	}
 
 	/**
-	 * Callback method from {@link RadioProgramListFragment.Callbacks}
-	 * indicating that the item with the given ID was selected.
+	 * Callback method from {@link RadioProgramListFragment.Callbacks} indicating that the item with the given ID was selected.
 	 */
 	@Override
 	public void onItemSelected(String id) {
