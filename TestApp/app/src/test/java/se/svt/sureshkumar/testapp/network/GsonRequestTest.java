@@ -14,7 +14,8 @@ import org.robolectric.RuntimeEnvironment;
 
 import se.svt.sureshkumar.testapp.config.TestRunner;
 import se.svt.sureshkumar.testapp.network.reply.ReplyBase;
-import se.svt.sureshkumar.testapp.network.request.SVTRequest;
+import se.svt.sureshkumar.testapp.network.request.SvtRequest;
+import se.svt.sureshkumar.testapp.network.volley.GsonRequest;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
@@ -31,9 +32,9 @@ public class GsonRequestTest extends TestCase {
 
 	@Test
 	public void testGsonRequestClass() {
-		SVTRequest svtRequest = Mockito.mock(SVTRequest.class);
+		SvtRequest svtRequest = Mockito.mock(SvtRequest.class);
 		when(svtRequest.getRequestMethodType()).thenReturn(Request.Method.GET);
-		when(svtRequest.getApiUrl()).thenReturn("");
+		when(svtRequest.getBaseUrl()).thenReturn("");
 
 		GsonRequest request = new GsonRequest(svtRequest.getRequestMethodType(), null, svtRequest, ReplyBase.class, null, null, null);
 		String json = "{}";

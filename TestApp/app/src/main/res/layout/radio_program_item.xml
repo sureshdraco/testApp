@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	android:id="@+id/container"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:padding="10dp">
+
+	<com.android.volley.toolbox.NetworkImageView
+		android:id="@+id/programImage"
+		android:layout_width="70dp"
+		android:layout_height="70dp"
+		android:layout_alignParentLeft="true"
+		android:layout_centerVertical="true"
+		android:src="@drawable/unknown_program"/>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true"
+		android:layout_margin="12dp"
+		android:layout_toEndOf="@+id/programImage"
+		android:layout_toRightOf="@+id/programImage"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/title"
+			style="@style/radio_program_list_item_title"
+			android:text="title"
+			tools:ignore="HardcodedText"/>
+
+		<TextView
+			android:id="@+id/description"
+			style="@style/radio_program_list_item_desc"
+			android:text="this is description"
+			tools:ignore="HardcodedText"/>
+	</LinearLayout>
+</RelativeLayout>

@@ -1,9 +1,11 @@
 package se.svt.sureshkumar.testapp.network;
 
 import se.svt.sureshkumar.testapp.network.reply.ReplyBase;
-import se.svt.sureshkumar.testapp.network.request.SVTRequest;
+import se.svt.sureshkumar.testapp.network.request.SvtRequest;
 import se.svt.sureshkumar.testapp.network.responselisteners.ErrorListener;
 import se.svt.sureshkumar.testapp.network.responselisteners.SuccessListener;
+import se.svt.sureshkumar.testapp.network.volley.GsonRequest;
+import se.svt.sureshkumar.testapp.network.volley.VolleyClient;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -36,11 +38,11 @@ public class ApiServiceManager {
 		return requestQueue;
 	}
 
-	public <T extends ReplyBase> void addRequest(SVTRequest svtRequest, Class<T> replyClass, SuccessListener<T> responseListener, ErrorListener errorListener) {
-		addRequest(svtRequest, replyClass, responseListener, errorListener, VolleyClient.NO_RETRY_POLICY, null, false);
+	public <T extends ReplyBase> void addRequest(SvtRequest svtRequest, Class<T> replyClass, SuccessListener<T> responseListener, ErrorListener errorListener) {
+		addRequest(svtRequest, replyClass, responseListener, errorListener, VolleyClient.NO_RETRY_POLICY, null, true);
 	}
 
-	public <T extends ReplyBase> void addRequest(SVTRequest svtRequest, Class<T> replyClass, SuccessListener<T> responseListener, ErrorListener errorListener,
+	public <T extends ReplyBase> void addRequest(SvtRequest svtRequest, Class<T> replyClass, SuccessListener<T> responseListener, ErrorListener errorListener,
 			RetryPolicy retryPolicy, String requestTag, boolean enableClientSideCaching) {
 		GsonRequest<T> gsonRequest = new GsonRequest<T>(svtRequest.getRequestMethodType(), svtRequest.getApiUrl(),
 				svtRequest, replyClass, svtRequest.getHeaders(), responseListener, errorListener, retryPolicy);

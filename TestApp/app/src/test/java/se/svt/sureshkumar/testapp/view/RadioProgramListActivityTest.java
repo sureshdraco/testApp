@@ -11,6 +11,7 @@ import org.robolectric.util.ActivityController;
 import se.svt.sureshkumar.testapp.BuildConfig;
 import se.svt.sureshkumar.testapp.R;
 import se.svt.sureshkumar.testapp.config.TestRunner;
+import se.svt.sureshkumar.testapp.view.activity.RadioProgramListActivity;
 
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.

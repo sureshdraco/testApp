@@ -1,6 +1,9 @@
-package se.svt.sureshkumar.testapp.view;
+package se.svt.sureshkumar.testapp.view.activity;
 
 import se.svt.sureshkumar.testapp.R;
+import se.svt.sureshkumar.testapp.model.RadioProgram;
+import se.svt.sureshkumar.testapp.view.fragment.RadioProgramDetailFragment;
+import se.svt.sureshkumar.testapp.view.fragment.RadioProgramListFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -66,13 +69,13 @@ public class RadioProgramListActivity extends AppCompatActivity
 	 * Callback method from {@link RadioProgramListFragment.Callbacks} indicating that the item with the given ID was selected.
 	 */
 	@Override
-	public void onItemSelected(String id) {
+	public void onProgramSelected(RadioProgram radioProgram) {
 		if (mTwoPane) {
 			// In two-pane mode, show the detail view in this activity by
 			// adding or replacing the detail fragment using a
 			// fragment transaction.
 			Bundle arguments = new Bundle();
-			arguments.putString(RadioProgramDetailFragment.ARG_ITEM_ID, id);
+			arguments.putParcelable(RadioProgramDetailFragment.ARG_ITEM, radioProgram);
 			RadioProgramDetailFragment fragment = new RadioProgramDetailFragment();
 			fragment.setArguments(arguments);
 			getSupportFragmentManager().beginTransaction()
@@ -83,7 +86,7 @@ public class RadioProgramListActivity extends AppCompatActivity
 			// In single-pane mode, simply start the detail activity
 			// for the selected item ID.
 			Intent detailIntent = new Intent(this, RadioProgramDetailActivity.class);
-			detailIntent.putExtra(RadioProgramDetailFragment.ARG_ITEM_ID, id);
+			detailIntent.putExtra(RadioProgramDetailFragment.ARG_ITEM, radioProgram);
 			startActivity(detailIntent);
 		}
 	}

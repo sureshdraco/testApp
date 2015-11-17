@@ -24,7 +24,7 @@
 
 	<fragment
 		android:id="@+id/radioprogram_list"
-		android:name="se.svt.sureshkumar.testapp.view.RadioProgramListFragment"
+		android:name="se.svt.sureshkumar.testapp.view.fragment.RadioProgramListFragment"
 		android:layout_width="0dp"
 		android:layout_height="match_parent"
 		android:layout_weight="1"

@@ -1,4 +1,5 @@
 <resources>
 	<string name="app_name">Test App</string>
 	<string name="title_radioprogram_detail">RadioProgram Detail</string>
+	<string name="failed">Failed!</string>
 </resources>

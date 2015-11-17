@@ -1,4 +1,4 @@
-package se.svt.sureshkumar.testapp.network;
+package se.svt.sureshkumar.testapp.network.volley;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;

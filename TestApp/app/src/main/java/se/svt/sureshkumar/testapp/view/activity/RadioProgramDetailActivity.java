@@ -1,25 +1,23 @@
-package se.svt.sureshkumar.testapp.view;
-
-import android.support.v7.app.AppCompatActivity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
-import android.support.v4.app.NavUtils;
-import android.view.MenuItem;
+package se.svt.sureshkumar.testapp.view.activity;
 
 import se.svt.sureshkumar.testapp.R;
+import se.svt.sureshkumar.testapp.view.fragment.RadioProgramDetailFragment;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
 
 /**
- * An activity representing a single RadioProgram detail screen. This
- * activity is only used on handset devices. On tablet-size devices,
- * item details are presented side-by-side with a list of items
- * in a {@link RadioProgramListActivity}.
+ * An activity representing a single RadioProgram detail screen. This activity is only used on handset devices. On tablet-size devices, item details are presented side-by-side with
+ * a list of items in a {@link RadioProgramListActivity}.
  * <p/>
- * This activity is mostly just a 'shell' activity containing nothing
- * more than a {@link RadioProgramDetailFragment}.
+ * This activity is mostly just a 'shell' activity containing nothing more than a {@link RadioProgramDetailFragment}.
  */
 public class RadioProgramDetailActivity extends AppCompatActivity {
 
@@ -55,8 +53,8 @@ public class RadioProgramDetailActivity extends AppCompatActivity {
 			// Create the detail fragment and add it to the activity
 			// using a fragment transaction.
 			Bundle arguments = new Bundle();
-			arguments.putString(RadioProgramDetailFragment.ARG_ITEM_ID,
-					getIntent().getStringExtra(RadioProgramDetailFragment.ARG_ITEM_ID));
+			arguments.putParcelable(RadioProgramDetailFragment.ARG_ITEM,
+					getIntent().getParcelableExtra(RadioProgramDetailFragment.ARG_ITEM));
 			RadioProgramDetailFragment fragment = new RadioProgramDetailFragment();
 			fragment.setArguments(arguments);
 			getSupportFragmentManager().beginTransaction()
