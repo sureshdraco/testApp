@@ -75,6 +75,7 @@ public class RadioProgramListFragment extends ListFragment {
 				&& savedInstanceState.containsKey(STATE_ACTIVATED_POSITION)) {
 			setActivatedPosition(savedInstanceState.getInt(STATE_ACTIVATED_POSITION));
 		}
+		setEmptyText("Empty View!");
 	}
 
 	private void getLatestPrograms() {
@@ -100,19 +101,16 @@ public class RadioProgramListFragment extends ListFragment {
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-
-		// Activities containing this fragment must implement its callbacks.
-		if (!(activity instanceof Callbacks)) {
-			throw new IllegalStateException("Activity must implement fragment's callbacks.");
+		try {
+			mCallbacks = (Callbacks) activity;
+		} catch (Exception ignored) {
+			// test purpose
 		}
-
-		mCallbacks = (Callbacks) activity;
 	}
 
 	@Override
 	public void onDetach() {
 		super.onDetach();
-
 		// Reset the active callbacks interface
 		mCallbacks = null;
 	}
@@ -120,7 +118,6 @@ public class RadioProgramListFragment extends ListFragment {
 	@Override
 	public void onListItemClick(ListView listView, View view, int position, long id) {
 		super.onListItemClick(listView, view, position, id);
-
 		// Notify the active callbacks interface (the activity, if the
 		// fragment is attached to one) that an item has been selected.
 		mCallbacks.onProgramSelected(programListAdapter.getItem(position));

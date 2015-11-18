@@ -23,11 +23,11 @@ public class VolleyClient {
 	private static final String DEFAULT_CACHE_DIR = "volley";
 	private static VolleyClient mInstance;
 	private static Context mCtx;
-	private RequestQueue mRequestQueue;
+	private RequestQueue requestQueue;
 
 	private VolleyClient(Context context) {
 		mCtx = context;
-		mRequestQueue = getRequestQueue();
+		requestQueue = getRequestQueue();
 	}
 
 	public static synchronized VolleyClient getInstance(Context context) {
@@ -52,12 +52,16 @@ public class VolleyClient {
 	}
 
 	public RequestQueue getRequestQueue() {
-		if (mRequestQueue == null) {
+		if (requestQueue == null) {
 			// getApplicationContext() is key, it keeps you from leaking the
 			// Activity or BroadcastReceiver if someone passes one in.
-			mRequestQueue = VolleyClient.newRequestQueue(mCtx.getApplicationContext(), null);
+			requestQueue = VolleyClient.newRequestQueue(mCtx.getApplicationContext(), null);
 			VolleyLog.DEBUG = Constant.DEBUG;
 		}
-		return mRequestQueue;
+		return requestQueue;
+	}
+
+	public void setRequestQueue(RequestQueue requestQueue) {
+		this.requestQueue = requestQueue;
 	}
 }

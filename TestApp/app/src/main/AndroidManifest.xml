@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="se.svt.sureshkumar.testapp"
-		  xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+	package="se.svt.sureshkumar.testapp"
+	xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<uses-permission android:name="android.permission.INTERNET"/>
 
@@ -23,8 +24,7 @@
 		<activity
 			android:name=".view.activity.RadioProgramDetailActivity"
 			android:label="@string/title_radioprogram_detail"
-			android:parentActivityName=".view.activity.RadioProgramListActivity"
-			android:theme="@style/AppTheme.NoActionBar">
+			android:parentActivityName=".view.activity.RadioProgramListActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
 				android:value=".view.activity.RadioProgramListActivity"/>

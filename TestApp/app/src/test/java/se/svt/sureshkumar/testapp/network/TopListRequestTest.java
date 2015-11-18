@@ -1,12 +1,11 @@
 package se.svt.sureshkumar.testapp.network;
 
-import java.util.HashMap;
-
 import junit.framework.TestCase;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+import se.svt.sureshkumar.testapp.config.MockVolleyResponse;
 import se.svt.sureshkumar.testapp.network.request.TopListRequest;
 
 /**
@@ -14,6 +13,7 @@ import se.svt.sureshkumar.testapp.network.request.TopListRequest;
  */
 public class TopListRequestTest extends TestCase {
 	private TopListRequest topListRequest;
+	private MockVolleyResponse mockVolleyResponse;
 
 	@Override
 	public void setUp() throws Exception {

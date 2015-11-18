@@ -51,6 +51,12 @@ public class RadioProgram implements Parcelable {
 	public RadioProgram() {
 	}
 
+	public RadioProgram(String imageUrl, String title, String description) {
+		this.imageurl = imageUrl;
+		this.title = title;
+		this.description = description;
+	}
+
 	protected RadioProgram(Parcel in) {
 		this.id = in.readString();
 		this.title = in.readString();

@@ -38,4 +38,12 @@ public class SvtRequestTest extends TestCase {
 		testQuery.put("key2", "value2");
 		Assert.assertEquals("www.test.com?format=json&key2=value2&key1=value1", testSvtRequest.getApiUrl());
 	}
+
+	@Test
+	public void testGetRequestBody() throws Exception {
+		HashMap<String, String> testQuery = new HashMap<>();
+		testQuery.put("key1", "value1");
+		testSvtRequest.queryParams = testQuery;
+		Assert.assertEquals("", testSvtRequest.getJsonBody());
+	}
 }
